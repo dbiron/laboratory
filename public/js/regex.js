@@ -17,73 +17,27 @@ let missmail02 = document.getElementById ('missmail02');
 
 let envoi = document.getElementById ('envoi');
 
-    envoi.addEventListener("click", veriffirstname)
-        function veriffirstname(event){
-            if (firstname.validity.valueMissing){
+    envoi.addEventListener("click", function(event){
+        veriffall(event, firstname, firstnameregex, missfirstname)
+        veriffall(event, lastname, lastnameregex, misslastname)
+        veriffall(event, phone, phoneregex, missphone)
+        veriffall(event, mail02, mail02regex, missmail02)
+    })
+    function veriffall(event, element, elementregex, misselement){    
+            if (element.validity.valueMissing){
                 event.preventDefault();
-                missfirstname.textContent = 'Remplis le champ';
-                missfirstname.style.color = 'orange'
+                misselement.textContent = 'Remplis le champ';
+                misselement.style.color = 'orange'
             }
-            else if (firstnameregex.test(firstname.value) == false){
+            else if (elementregex.test(element.value) == false){
                 event.preventDefault();
-                missfirstname.textContent = 'Format incorrect';
-                missfirstname.style.color = 'red'
+                misselement.textContent = 'Format incorrect';
+                misselement.style.color = 'red'
             }
             else {
-                missfirstname.textContent = 'Ok'
-                missfirstname.style.color = 'green'
+                misselement.textContent = 'Ok'
+                misselement.style.color = 'green'
                 }         
-        }
-    envoi.addEventListener("click", veriflastname)
-        function veriflastname(event){
-            if (lastname.validity.valueMissing){
-                event.preventDefault();
-                misslastname.textContent = 'Remplis le champ';
-                misslastname.style.color = 'orange'
-            }
-            else if (lastnameregex.test(lastname.value) == false){
-                event.preventDefault();
-                misslastname.textContent = 'Format incorrect';
-                misslastname.style.color = 'red'               
-            }
-            else {
-                misslastname.textContent = 'Ok';
-                misslastname.style.color = 'green'
-            }           
-        }
-    envoi.addEventListener("click", verifphone)
-        function verifphone(event){
-            if (phone.validity.valueMissing){
-                event.preventDefault();
-                missphone.textContent = 'Remplis le champ';
-                missphone.style.color = 'orange'
-            }
-            else if (phoneregex.test(phone.value) == false){
-                event.preventDefault();
-                missphone.textContent = 'Format incorrect';
-                missphone.style.color = 'red'               
-            }
-            else {
-                missphone.textContent = 'Ok';
-                missphone.style.color = 'green'
-            }           
-        }
-    envoi.addEventListener("click", verifmail02)
-        function verifmail02(event){
-            if (mail02.validity.valueMissing){
-                event.preventDefault();
-                missmail02.textContent = 'Remplis le champ';
-                missmail02.style.color = 'orange'
-            }
-            else if (mail02regex.test(mail02.value) == false){
-                event.preventDefault();
-                missmail02.textContent = 'Format incorrect';
-                missmail02.style.color = 'red'               
-            }
-            else {
-                missmail02.textContent = 'Ok';
-                missmail02.style.color = 'green'
-            }           
-        }
+    }    
 
 
