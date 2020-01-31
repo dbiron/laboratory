@@ -12,8 +12,10 @@
     <!--- Liens vers les feuilles css --->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
     <link rel="stylesheet" href="public/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="public/js/creds.js"></script>
+    <script src="public/js/bot.js"></script>
 </head>
 
 <body>
@@ -87,7 +89,7 @@
 </header>
     <!--- Main Page --->
     <main id="container">
-        <form id="message" method="post" action="traitement.php">
+        <div id="message">
 
             <label for="firstname">Prénom</label> <span id="missfirstname"></span>
             <input type="text" id="firstname" name="firstname" title="Entrez votre Prénom" required>
@@ -102,10 +104,11 @@
             <input type="email" id="mail02" name="mail02" title="Entrez votre adresse Mail" required>
 
             <label for="adresse">Adresse de Résidence</label>
-            <input type="text" id="adresse" name="adresse" title="Entrez votre adresse" required>
+            <input type="text" id="street" name="street" title="Entrez votre adresse" required>
+            <div class="complete" id="result"></div>
 
-            <input type="submit" id="envoi" value="Connexion">
-        </form>
+            <button id="envoi">Connexion</button>
+        </div>
     </main>
     <!--- Footer et Copyright --->
     <footer id="bottom-container">
@@ -150,6 +153,7 @@
     <script src="public/js/regexlogin.js"></script>
     <script src="public/js/arrowup.js"></script>
     <script src="public/js/active.js"></script>
+    <script src="public/js/gouv.js"></script>
     <script>menuAct(5);</script>
 </body>
 
