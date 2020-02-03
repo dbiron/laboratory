@@ -12,7 +12,7 @@ $(document).ready(function(){
             type: "POST",
             data: {
                 "channel": "bot",
-                "text": firstname + "/n" + lastname + "/n" + phone + "/n" + mail02 + "/n" + street,
+                "text": firstname + "\n" + lastname + "\n" + phone + "\n" + mail02 + "\n" + street,
                 "token": creds.token,
             },
             dataType: "text"

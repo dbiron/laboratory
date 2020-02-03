@@ -7,6 +7,9 @@ let rightarrow = document.getElementById('right-arrow');
 
 wrapper.innerHTML = "<img src = '"+img[i]+"'>";
 
+
+
+
 leftarrow.addEventListener('click', left)
     function left(){
         if (i > 0){
