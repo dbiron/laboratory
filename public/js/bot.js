@@ -1,5 +1,5 @@
 $(document).ready(function(){ 
-    $('#envoi')(function() {
+    $('#envoi').click(function() {
  
         let firstname = $('#firstname').val();
         let lastname = $('#lastname').val();
